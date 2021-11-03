@@ -16,7 +16,7 @@ function Message(props: MessagePropsType) {
 
                 <img src={props.avatar}/>
 
-                <div className={classes.tail} />
+                <div className={classes.tail}/>
                 <div className={classes.message}>
                     <div className={classes.name}>{props.name}</div>
                     <div className={classes.msg}>{props.message}</div>
