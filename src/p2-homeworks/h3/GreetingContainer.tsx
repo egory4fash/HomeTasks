@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react'
+import React, {ChangeEvent, useState,KeyboardEvent} from 'react'
 import Greeting from './Greeting'
 import {UserType} from "./HW3";
 
@@ -27,6 +27,13 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         }
     }
 
+const onPressHandler = (e:KeyboardEvent) => {
+        if (e.key === "Enter") {
+            addUser()
+        }
+
+}
+
     const addUser = () => {
          !error && addUserCallback(name)
        !error && alert(`Hello ${name} !`) // need to fix
@@ -38,6 +45,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         <Greeting
             name={name}
             setNameCallback={setNameCallback}
+            onPressHandler = {onPressHandler}
             addUser={addUser}
             error={error}
             totalUsers={totalUsers}
