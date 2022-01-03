@@ -1,11 +1,19 @@
 import React from 'react'
 
+const errorStyle = {
+    display: 'flex',
+
+
+    justifyContent: 'center',
+    backgroundColor: 'black',
+
+
+}
+
 function Error404() {
     return (
-        <div>
-            <div>404</div>
-            <div>Page not found!</div>
-            <div>—ฅ/ᐠ.̫ .ᐟ\ฅ—</div>
+        <div style={errorStyle}>
+            <img src="https://image.freepik.com/free-vector/glitch-error-404-page_23-2148105404.jpg"/>
         </div>
     )
 }
