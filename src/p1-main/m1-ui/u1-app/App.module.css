@@ -1,4 +1,15 @@
 .App {
     background-color: palegreen;
+}
 
+.Links {
+    border: solid black ;
+    width: 100px;
+    color: red;
+}
+
+.Collapse {
+    border: black solid;
+    color: red;
+    width: 100px;
 }
