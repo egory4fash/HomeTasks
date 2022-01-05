@@ -9,8 +9,8 @@ function App() {
     return (
 <HashRouter>
         <div className={s.App}>
-            <div>react homeworks:</div>
-            <Collapsible className={s.Collapse} trigger={'PUSH ME'}>
+            <div >   react homeworks:</div>
+            <Collapsible className={s.Collapse} trigger={'   PUSH ME'} >
                 <div className={s.Links}>
                     <NavLink to={PATH.PRE_JUNIOR}>PreJunor</NavLink>
                     <NavLink to={PATH.JUNIOR}>  Junior  </NavLink>
