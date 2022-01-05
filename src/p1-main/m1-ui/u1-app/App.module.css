@@ -6,10 +6,12 @@
     border: solid black ;
     width: 100px;
     color: red;
+    margin:20px;
 }
 
 .Collapse {
     border: black solid;
     color: red;
     width: 100px;
+    margin:20px;
 }
