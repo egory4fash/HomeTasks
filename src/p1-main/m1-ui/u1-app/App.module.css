@@ -2,16 +2,28 @@
     background-color: darkgrey;
 }
 
-.Links {
-    border: solid black ;
-    width: 100px;
-    color: red;
+.links {
+    display: flex;
+    transition-duration: 500ms;
+    transform: translate(-300px);
+    border: solid black thin ;
+    width: 400px;
+    color: black;
     margin:20px;
+
+    background-color: aliceblue;
+    text-align: center;
 }
 
-.Collapse {
-    border: black solid;
-    color: red;
-    width: 100px;
-    margin:20px;
+.inner {
+    display: inline-block;
+    margin: 20px;
+
 }
+
+.links:hover {
+    transition-duration: 500ms;
+    transform: translate(0);
+}
+
+
