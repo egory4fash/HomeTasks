@@ -1,5 +1,5 @@
 import React from 'react'
-import {Switch, Route,Redirect} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import PreJunior from "./pages/PreJunior";
 import Error404 from "./pages/Error404";
 import {Junior} from "./pages/Junior";
