@@ -1,0 +1,17 @@
+.buttons {
+    display: flex;
+}
+
+.people {
+    display: flex;
+    width: 300px;
+    border: 1px solid black;
+}
+
+.left {
+    left: 0px;
+}
+
+.right {
+    float: right;
+}
