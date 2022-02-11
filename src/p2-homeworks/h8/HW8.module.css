@@ -1,17 +1,25 @@
 .buttons {
     display: flex;
+
 }
 
 .people {
     display: flex;
-    width: 300px;
-    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-between;
+    width:530px;
+    max-height: 30px;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.left {
-    left: 0px;
-}
+/*.left {*/
+/*    align-content: center;*/
+/*}*/
 
-.right {
-    float: right;
-}
+/*.right {*/
+/*    justify-content: space-between;*/
+/*}*/

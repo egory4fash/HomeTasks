@@ -5,6 +5,8 @@ import {NavLink, HashRouter} from 'react-router-dom'
 import {PATH} from "../../../p2-homeworks/h5/Routes";
 
 
+
+
 function App() {
 
 
@@ -12,13 +14,14 @@ function App() {
         <HashRouter>
             <div className={s.App}>
 
-                <div> react homeworks:</div>
+                <div>
+                    react homeworks:</div>
 
                 <div className={s.links}>
                     <div className={s.inner}><NavLink to={PATH.PRE_JUNIOR}>PreJunior</NavLink></div>
                     <div className={s.inner}><NavLink to={PATH.JUNIOR}>Junior</NavLink></div>
                     <div className={s.inner}><NavLink to={PATH.JUNIOR_PLUS}>Junior+</NavLink></div>
-                    <div className={s.inner}>Links</div>
+                    <div  className={s.inner}>Links</div>
                 </div>
 
                 {/*<HW1/>*/}
