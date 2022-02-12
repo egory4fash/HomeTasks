@@ -1,8 +1,10 @@
 export const homeWorkReducer = (state: any, action: any): any => { // need to fix any
     switch (action.type) {
-        case 'sort': {
-            // need to fix
-            return state
+        case 'sortup': {
+            let newState = [...state].sort(a,b) => {
+                a.name>b.name
+            }
+            return newState
         }
         case 'check': {
             // need to fix
@@ -10,4 +12,3 @@ export const homeWorkReducer = (state: any, action: any): any => { // need to fi
         }
         default: return state
     }
-}
