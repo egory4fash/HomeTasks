@@ -1,6 +1,6 @@
 import {UserType} from "../HW8";
 
-export const homeWorkReducer = (state: UserType, action:{type:string}): any => { // need to fix any
+export const homeWorkReducer = (state: UserType, action: { type: string }): any => { // need to fix any
     switch (action.type) {
         case 'sortUp': {
             let newState = [...state].sort((a, b) => a.name > b.name ? 1 : -1)
