@@ -17,11 +17,11 @@ const Greeting: React.FC<GreetingPropsType> = (
     const inputClass = error ? s.error : '' // need to fix with (?:)
 
     return (
-        <div>
+        <div className = {s.div}>
             <input value={name} onChange={setNameCallback} onKeyPress={onPressHandler} className={inputClass}/>
-            <span> {error && "name is required" }  </span>
-            <button onClick={addUser}>add</button>
-            <span>{totalUsers}</span>
+            <span className={s.span}> {error && "   name is required   " }  </span>
+            <button onClick={addUser}>   add   </button>
+            <span className={s.span}>{totalUsers}</span>
         </div>
     )
 }
