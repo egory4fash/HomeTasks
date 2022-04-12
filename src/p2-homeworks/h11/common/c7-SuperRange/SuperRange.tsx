@@ -1,5 +1,6 @@
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
+import React, {DetailedHTMLProps, InputHTMLAttributes} from 'react'
 import s from './SuperRange.module.css'
+import {Box, Slider} from "@mui/material";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -8,6 +9,7 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
 type SuperRangePropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
     onChangeRange?: (value: number) => void
+    value1?:number
 };
 
 const SuperRange: React.FC<SuperRangePropsType> = (
@@ -19,23 +21,35 @@ const SuperRange: React.FC<SuperRangePropsType> = (
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeCallback = (e: any) => {
+        console.log(e)
         onChange && onChange(e) // сохраняем старую функциональность
 
-        onChangeRange && onChangeRange(+e.currentTarget.value)
+        onChangeRange && onChangeRange(+e.currentTarget?.value)
     }
 
     const finalRangeClassName = `${s.range} ${className ? className : ''}`
 
     return (
         <>
-            <input
-                type={'range'}
-                onChange={onChangeCallback}
-                className={finalRangeClassName}
+            <Box width={'300px'}>
+                <Slider
+                    onChange={onChangeCallback}
+                    defaultValue={restProps.value1}
+                    min={0}
+                    max={130}
+                    value={restProps.value1}
+                ></Slider>
+            </Box>
 
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
-            />
+            {/*<input*/}
+            {/*    type={'range'}*/}
+            {/*    onChange={onChangeCallback}*/}
+            {/*    className={finalRangeClassName}*/}
+            {/*    value={restProps.value }*/}
+
+            {/*    {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)*/}
+            {/*/>*/}
         </>
     )
 }

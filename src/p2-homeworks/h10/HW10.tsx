@@ -16,7 +16,7 @@ function HW10() {
         // setTimeout
         setTimeout(() => {
             dispatch(isLoadingAC(false))
-        }, 1500)
+        }, 2000)
         console.log('loading...')
     };
 
@@ -28,8 +28,8 @@ function HW10() {
 
             {/*should work (должно работать)*/}
             {isLoading
-                ? (<div>
-                        <div className={s.cssloadloader}>Загрузка</div>
+                ? (<div className = {s.main}>
+                        <div className={s.spinner}></div>
 
                     </div>
                 ) : (
@@ -39,10 +39,10 @@ function HW10() {
                 )
             }
 
-            <hr/>
+
             {/*для личного творчества, могу проверить*/}
             {/*<Alternative/>*/}
-            <hr/>
+
         </div>
     )
 }
