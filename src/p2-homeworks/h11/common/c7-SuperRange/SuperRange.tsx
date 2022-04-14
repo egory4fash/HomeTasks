@@ -8,38 +8,37 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 // здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
 type SuperRangePropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
-    onChangeRange?: (value: number) => void
-    value1?:number
+    onChangeRange: (value: number | number []) => void
+    value1?:any,
+    minValue?:any,
+    maxValue?:any,
+    step?:any
 };
 
 const SuperRange: React.FC<SuperRangePropsType> = (
     {
         type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
         onChange, onChangeRange,
+        value1,
+        minValue,maxValue,
         className,
 
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const onChangeCallback = (e: any) => {
-        console.log(e)
-        onChange && onChange(e) // сохраняем старую функциональность
 
-        onChangeRange && onChangeRange(+e.currentTarget?.value)
-    }
 
-    const finalRangeClassName = `${s.range} ${className ? className : ''}`
 
     return (
         <>
-            <Box width={'300px'}>
+            <Box className = {s.box}
+                width={'300px'}>
                 <Slider
-                    onChange={onChangeCallback}
-                    defaultValue={restProps.value1}
-                    min={0}
-                    max={130}
-                    value={restProps.value1}
-                ></Slider>
+                    onChange={(event,value) => {onChangeRange(value)}}
+                    defaultValue={value1}
+                    value={value1}
+                    valueLabelDisplay="on"
+                />
             </Box>
 
             {/*<input*/}

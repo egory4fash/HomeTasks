@@ -1,14 +1,18 @@
+import {Box, Slider} from '@mui/material'
 import React from 'react'
+import s from '../c7-SuperRange/SuperRange.module.css'
 
 type SuperDoubleRangePropsType = {
-    onChangeRange?: (value: [number, number]) => void
-    value?: [number, number]
+    handleChange2?: (event: Event,
+                     newValue: number | number[],
+                     activeThumb: number,) => void
+    value2?: number[]
     // min, max, step, disable, ...
 }
 
 const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
     {
-        onChangeRange, value,
+        handleChange2, value2,
         // min, max, step, disable, ...
     }
 ) => {
@@ -16,7 +20,16 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
 
     return (
         <>
-            DoubleRange
+            <Box
+                className={s.box} sx={{width: 300}}>
+                <Slider
+                    value={value2}
+                    onChange={handleChange2}
+
+                    disableSwap
+                    valueLabelDisplay="on"
+                />
+            </Box>
         </>
     )
 }
