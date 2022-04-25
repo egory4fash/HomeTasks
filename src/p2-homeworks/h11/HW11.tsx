@@ -5,7 +5,7 @@ import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
 function HW11() {
 
     const minValue = 30
-    const maxValue = 140
+    const maxValue = 100
 
     const [value1, setValue1] = useState<number | number []>(minValue)
     const [value2, setValue2] = useState<any>([minValue, maxValue])
