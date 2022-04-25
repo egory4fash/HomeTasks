@@ -12,7 +12,6 @@ function HW7() {
         <div>
             <hr/>
             homeworks 7
-
             {/*should work (должно работать)*/}
             <div>
                 <SuperSelect
