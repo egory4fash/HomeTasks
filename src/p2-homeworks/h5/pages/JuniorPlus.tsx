@@ -1,8 +1,11 @@
 import React from "react";
+import HW13 from "../../h13/HW13";
 
 export const JuniorPlus = () => {
     debugger
     return (
-        <div>Sorry,nothing here,JUNIOR_PLUS</div>
+        <div>
+            <HW13/>
+        </div>
     )
 }
